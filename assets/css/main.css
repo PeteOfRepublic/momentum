@@ -126,3 +126,42 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+#momentum {
+  background: purple;
+  position: absolute;
+  transform: translate(0, -5px);
+  transition: transform 0.2s ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  box-shadow: 0 0 3px purple;
+}
+#momentum::after {
+  content: "";
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  height: 100%;
+  background: orange;
+}
+#momentum.active {
+  transform: translate(0, 0);
+  transition: transform 0.2s ease-in-out;
+}
+#momentum.active::after {
+  height: 200%;
+  box-shadow: 0 0 20px orange;
+  margin: -1px 0 0;
+  transform: translate(calc(100vw + 200px), 0);
+  transition: transform 5s ease-in-out;
+  animation: setWidth 5s linear;
+}
+@keyframes setWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 200px;
+  }
+}

@@ -1,1 +1,50 @@
 @import url("../bower_components/Blankslate/reset.less");
+
+// variables
+@rail-colour: purple;
+@rail-duration: .2s;
+
+@carriage-width: 200px;
+@carriage-colour: orange;
+@carriage-shadow: orange;
+@carriage-duration: 5s;
+
+#momentum {
+  background: @rail-colour;
+  position: absolute;
+  transform: translate(0, -5px);
+  transition: transform @rail-duration ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  box-shadow: 0 0 3px @rail-colour;
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    height: 100%;
+    background: @carriage-colour;
+  }
+  &.active {
+    transform: translate(0, 0);
+    transition: transform @rail-duration ease-in-out;
+    &::after {
+      height: 200%;
+      box-shadow: 0 0 20px @carriage-shadow;
+      margin: -1px 0 0;
+      transform: translate(~'calc(100vw + @{carriage-width})', 0);
+      transition: transform @carriage-duration ease-in-out;
+      animation: setWidth @carriage-duration linear;
+    }
+  }
+}
+@keyframes setWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: @carriage-width;
+  }
+}
