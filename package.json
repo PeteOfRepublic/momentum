@@ -1,7 +1,7 @@
 {
-  "name": "boilerplate",
+  "name": "momentum",
   "version": "1.0.0",
-  "description": "My standard web project boilerplate",
+  "description": "A prgress bar in CSS3 animations for your PJAX libs",
   "main": "Gruntfile.js",
   "dependencies": {
     "autoprefixer": "^6.3.6",
@@ -19,22 +19,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Flowdeeps/boilerplate.git"
+    "url": "git+https://github.com/Flowdeeps/momentum.git"
   },
   "keywords": [
     "HTML",
-    "LES",
-    "Grunt",
-    "watch",
+    "LESS",
     "CSS",
-    "async",
-    "boilerplate",
-    "bootstrap"
+    "PJAX"
   ],
   "author": "Pete Haughie pete@republicofpete.net",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Flowdeeps/boilerplate/issues"
+    "url": "https://github.com/Flowdeeps/momentum/issues"
   },
-  "homepage": "https://github.com/Flowdeeps/boilerplate#readme"
+  "homepage": "https://github.com/Flowdeeps/momentum#readme"
 }

@@ -1,6 +1,6 @@
 {
-  "name": "boilerplate",
-  "description": "My standard web project boilerplate",
+  "name": "momentum",
+  "description": "A prgress bar in CSS3 animations for your PJAX libs",
   "main": "index.html",
   "authors": [
     "Pete Haughie pete@republicofpete.net"
@@ -9,12 +9,8 @@
   "keywords": [
     "HTML",
     "LESS",
-    "Grunt",
-    "watch",
     "CSS",
-    "async",
-    "boilerplate",
-    "bootstrap"
+    "PJAX"
   ],
   "homepage": "https://github.com/Flowdeeps/boilerplate",
   "private": true,
