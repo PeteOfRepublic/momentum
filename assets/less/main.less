@@ -10,18 +10,21 @@
 #momentum {
   background: @rail-colour;
   position: absolute;
-  transform: translate(0, -5px);
+  transform: translate(0, -2px);
   transition: transform @rail-duration ease-in-out;
-  top: 0;
+  top: 0; // default
+  bottom: auto;
   left: 0;
   right: 0;
   height: 2px;
+  width: 100%;
   box-shadow: 0 0 3px @rail-colour;
   &::after {
     content: "";
     position: absolute;
     z-index: 100;
-    top: 0;
+    top: 0; // default
+    bottom: auto;
     height: 100%;
     background: @carriage-colour;
   }
