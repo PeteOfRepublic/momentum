@@ -1,5 +1,7 @@
 # Momentum v1.0
 
+![momentum](assets/img/momentum.gif)
+
 Another little "solve your own problem library" - this time
 a progress bar for async page loading visualistion for the
 UI.

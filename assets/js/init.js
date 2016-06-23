@@ -1,19 +1,46 @@
 window.onload = function() {
 
 		var momentumElem = document.getElementById( 'momentum' );
-		var trigger = document.getElementById( 'trigger' );
 
-		var momentum = function(){
+		function checkState() {
 			if ( momentumElem.classList.contains( "active" ) ) {
 				momentumElem.classList.remove( "active" );
 			} else {
 				momentumElem.classList.add( "active" );
 			}
+		}
+		var style = document.createElement( 'style' );
+    document.head.appendChild( style );
+		checkState();
+
+		var i = 0;
+		var tick = 100;
+		var wait = 1500;
+
+		var loop = setInterval( function(){
+			doLoop();
+		}, tick);
+
+		function doLoop(){
+			if ( i <= 101 ) {
+				style.sheet.addRule( "#momentum.active::after", "width: " + i + "vw" );
+				i = i + 1;
+			} else {
+				i = 0;
+				pauseLoop();
+			}
 		};
 
-		trigger.onclick = function( event ) {
-			event.preventDefault();
-			momentum();
-		}
+		function pauseLoop(){
+			clearInterval( loop );
+			checkState();
+			style.sheet.addRule( "#momentum.active::after", "width: " + 0 + "vw" );
+			setTimeout( function() {
+				checkState();
+				loop = setInterval( function(){
+					doLoop();
+				}, tick);
+			}, wait);
+		};
 
 };

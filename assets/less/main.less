@@ -2,10 +2,9 @@
 @rail-colour: purple;
 @rail-duration: .2s;
 
-@carriage-width: 200px;
 @carriage-colour: orange;
 @carriage-shadow: orange;
-@carriage-duration: 5s;
+@carriage-duration: .5s;
 
 #momentum {
   background: @rail-colour;
@@ -35,17 +34,8 @@
       height: 200%;
       box-shadow: 0 0 20px @carriage-shadow;
       margin: -1px 0 0;
-      transform: translate(~'calc(100vw + @{carriage-width})', 0);
-      transition: transform @carriage-duration ease-in-out;
-      animation: setWidth @carriage-duration linear;
+      width: 0;
+      transition: width @carriage-duration;
     }
-  }
-}
-@keyframes setWidth {
-  from {
-    width: 0;
-  }
-  to {
-    width: @carriage-width;
   }
 }
